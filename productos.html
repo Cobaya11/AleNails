@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ale Nails - Productos</title>
+    <link rel="preload" href="CSS/styles.css" as="style">
+    <link href="CSS/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html#inicio"><img src="imagenes/logo.png" alt="NailGlam Studio Logo"></a>
+            </div>
+            <h1>Ale Nails</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="index.html#ofertas">Testimonios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="productos">
+        <h2>Todos Nuestros Productos</h2>
+        <div class="productos-grid" id="productos-grid">
+            <div class="productos-card">
+                <img src="imagenes/uñasbrillantes.jpg" alt="Esmalte de Uñas Brillante">
+                <h3>Esmalte de Uñas Brillante</h3>
+                <p>Esmalte de larga duración con acabado brillante, disponible en tonos vibrantes.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/kitdemanicura.jpg" alt="Kit de Manicura">
+                <h3>Kit de Manicura Pro</h3>
+                <p>Kit completo con herramientas de acero inoxidable para manicura y pedicura.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/uñas10.png" alt="Decoraciones de Uñas">
+                <h3>Decoraciones de Uñas</h3>
+                <p>Adhesivos y gemas para uñas con diseños únicos.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/uñasgel.png" alt="Esmalte en Gel">
+                <h3>Esmalte en Gel</h3>
+                <p>Esmalte en gel de alta duración con acabado profesional, ideal para uñas acrílicas.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/luzuv.jpg" alt="Lámpara UV">
+                <h3>Lámpara UV para Uñas</h3>
+                <p>Lámpara UV/LED para secado rápido de esmaltes en gel.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/pinceles.jpg" alt="Pinceles para Nail Art">
+                <h3>Pinceles para Nail Art</h3>
+                <p>Juego de pinceles para diseños detallados en uñas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Ale Nails. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function navigatePage() {
+            const input = parseInt(document.getElementById('nav-input').value);
+            switch (input) {
+                case 1:
+                    alert('Esta es la página de Productos de NailGlam Studio. Aquí encontrarás una amplia selección de productos para uñas, desde esmaltes hasta herramientas profesionales.');
+                    break;
+                case 2:
+                    window.location.href = 'index.html';
+                    break;
+                case 3:
+                    window.location.href = 'index.html#contacto';
+                    break;
+                default:
+                    alert('Por favor, ingresa 1, 2 o 3.');
+            }
+        }
+
+        function limitProducts() {
+            const limit = parseInt(document.getElementById('product-limit').value);
+            const products = document.querySelectorAll('.productos-card');
+            const totalProducts = products.length;
+
+            if (isNaN(limit) || limit < 1 || limit > totalProducts) {
+                alert(`Por favor, ingresa un número entre 1 y ${totalProducts}.`);
+                products.forEach(product => product.style.display = 'block');
+                return;
+            }
+
+            for (let i = 0; i < totalProducts; i++) {
+                products[i].style.display = i < limit ? 'block' : 'none';
+            }
+        }
+
+        document.body.classList.add('fade-in');
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const target = this.getAttribute('href');
+                if (!target.startsWith('#') && !target.startsWith('mailto') && !target.startsWith('tel')) {
+                    e.preventDefault();
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

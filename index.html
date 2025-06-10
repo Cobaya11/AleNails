@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ale Nails</title>
+    <link rel="preload" href="CSS/styles.css" as="style">
+    <link href="CSS/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html#inicio"><img src="imagenes/logo.png" alt="Ale Nails"></a>
+            </div>
+            <h1>Ale Nails</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Testimonios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Inicio-->
+    <section id="inicio" class="inicio">
+        <h2>Bienvenidos a Ale Nails</h2>
+        <p>Descubre la mejor selección de diseños de uñas y servicios de manicura llenos de creatividad. En Ale Nails, ofrecemos esmaltes vibrantes, decoraciones únicas y los mejores tratamientos para que tus uñas resalten. ¡Explora nuestras secciones de productos, servicios y no olvides la galería para encontrar tu estilo perfecto!</p>
+    </section>
+
+    <!--Galería-->
+    <section id="galeria" class="galeria">
+        <h2>Nuestra Galería de Estilos</h2>
+        <div class="carousel-container">
+            <button class="carousel-prev">◄</button>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="imagenes/uñas1.png" alt="Estilo de Uñas 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/uñas2.png" alt="Estilo de Uñas 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/uñas3.png" alt="Estilo de Uñas 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/uñas4.png" alt="Estilo de Uñas 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/uñas5.png" alt="Estilo de Uñas 5">
+                </div>
+            </div>
+            <button class="carousel-next">►</button>
+        </div>
+        <a href="galeria.html" class="view-more">Ver Más</a>
+    </section>
+
+    <!--Productos-->
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid" id="productos-grid">
+            <div class="productos-card">
+                <img src="imagenes/uñasbrillantes.jpg" alt="Esmalte de Uñas Brillante">
+                <h3>Esmalte de Uñas Brillante</h3>
+                <p>Esmalte de larga duración con acabado brillante, disponible en tonos vibrantes. Secado rápido y resistente.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/kitdemanicura.jpg" alt="Kit de Manicura">
+                <h3>Kit de Manicura Pro</h3>
+                <p>Kit completo con herramientas de acero inoxidable para manicura y pedicura en casa.</p>
+            </div>
+            <div class="productos-card">
+                <img src="imagenes/uñas10.png" alt="Decoraciones de Uñas">
+                <h3>Decoraciones de Uñas</h3>
+                <p>Adhesivos y gemas para uñas con diseños únicos, perfectos para cualquier ocasión.</p>
+            </div>
+        </div>
+        <a href="productos.html" class="view-more">Ver Más</a>
+    </section>
+
+    <!--Servicios-->
+    <section id="ofertas">
+        <h2>Testimonios</h2>
+        <div class="ofertas-grid" id="ofertas-grid">
+            <div class="productos-card ofertas-card">
+                <h3>Carolina Méndez</h3>
+        <p>"¡Ale Nails es una joya! Fui por una manicura clásica y terminé con un diseño de uñas con brillos que me tiene enamorada. La atención es súper cálida, ¡me sentí como en casa!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                 <h3>Fernanda López</h3>
+        <p>"Probé las uñas acrílicas en Ale Nails y quedé impactada. El diseño quedó exactamente como lo quería, y duran un montón. ¡Las chicas son un amor y súper profesionales!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Mariana Solís</h3>
+        <p>"Nunca había tenido un nail art tan bonito. En Ale Nails me hicieron un diseño floral que todos me elogian. ¡El ambiente es súper relajante y siempre salgo feliz!"</p>
+            </div>
+        </div>
+        <a href="ofertas.html" class="view-more">Ver Más</a>
+    </section>
+
+    <!--Contacto-->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <div class="contacto-info">
+            <p><strong>Email:</strong> alenailscr@gmail.com</p>
+            <p><strong>Teléfono:</strong> +506 8690-6532</p>
+            <p><strong>Instagram:</strong> @ale25_nails</p>
+            <p><strong>Dirección:</strong> Cartago, La Unión, San Diego, Calle Mesén</p>
+        </div>
+        <form class="contacto-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Ale Nails. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Aplicar fade-in al cargar la página
+        document.body.classList.add('fade-in');
+    
+        // Hacer que todos los clics en enlaces tengan aplicado fade-out antes de cambiar
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const target = this.getAttribute('href');
+                if (!target.startsWith('#') && !target.startsWith('mailto') && !target.startsWith('tel')) {
+                    e.preventDefault();
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+
+        // Carrusel
+        const carousel = document.querySelector('.carousel');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const items = document.querySelectorAll('.carousel-item');
+            const itemWidth = items[0].offsetWidth + 20; // Incluye margen
+            const maxIndex = Math.max(0, items.length - (window.innerWidth <= 768 ? 1 : 3)); // 1 en móviles, 3 en escritorio
+            currentIndex = Math.min(Math.max(currentIndex, 0), maxIndex); // Limitar índice
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const items = document.querySelectorAll('.carousel-item');
+            const maxIndex = items.length - (window.innerWidth <= 768 ? 1 : 3);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Actualizar carrusel al cambiar tamaño de ventana
+        window.addEventListener('resize', updateCarousel);
+
+        // Inicializar carrusel
+        updateCarousel();
+    </script>
+</body>
+</html>

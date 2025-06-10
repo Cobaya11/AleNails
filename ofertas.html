@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ale Nails - Testimonios</title>
+    <link rel="preload" href="CSS/styles.css" as="style">
+    <link href="CSS/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html#inicio"><img src="imagenes/logo.png" alt="NailGlam Studio Logo"></a>
+            </div>
+            <h1>Ale Nails</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="#ofertas">Testimonios</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="ofertas">
+        <h2>Nuestros testimonios</h2>
+        <div class="ofertas-grid" id="ofertas-grid">
+            <div class="productos-card ofertas-card">
+                 <h3>Carolina Méndez</h3>
+                <p>"¡Ale Nails es una joya! Fui por una manicura clásica y terminé con un diseño de uñas con brillos que me tiene enamorada. La atención es súper cálida, ¡me sentí como en casa!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Fernanda López</h3>
+                <p>"Probé las uñas acrílicas en Ale Nails y quedé impactada. El diseño quedó exactamente como lo quería, y duran un montón. ¡Las chicas son un amor y súper profesionales!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Mariana Solís</h3>
+             <p>"Nunca había tenido un nail art tan bonito. En Ale Nails me hicieron un diseño floral que todos me elogian. ¡El ambiente es súper relajante y siempre salgo feliz!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Isabel Quirós</h3>
+                 <p>"Fui por un esmalte en gel y wow, ¡qué calidad! Mis uñas siguen brillando como el primer día. El equipo de Ale Nails es súper creativo, ¡ya quiero volver!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Andrea Salazar</h3>
+                 <p>"Ale Nails me sorprendió con un diseño minimalista que quedó perfecto para mi estilo. La atención es de 10, te explican todo y te hacen sentir especial. ¡Súper recomendado!"</p>
+            </div>
+            <div class="productos-card ofertas-card">
+                <h3>Gabriela Torres</h3>
+                 <p>"Me encantó mi experiencia en Ale Nails. Me hicieron un nail art con gemas que es puro arte. Son súper detallistas y el lugar es hermoso, ¡mi nuevo sitio favorito!"</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Ale Nails. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function navigatePage() {
+            const input = parseInt(document.getElementById('nav-input').value);
+            switch (input) {
+                case 1:
+                    alert('Esta es la página de Ofertas de NailGlam Studio. Descubre descuentos exclusivos en productos y herramientas para uñas.');
+                    break;
+                case 2:
+                    window.location.href = 'index.html';
+                    break;
+                case 3:
+                    window.location.href = 'index.html#contacto';
+                    break;
+                default:
+                    alert('Por favor, ingresa 1, 2 o 3.');
+            }
+        }
+
+        function limitOffers() {
+            const limit = parseInt(document.getElementById('offer-limit').value);
+            const offers = document.querySelectorAll('.ofertas-card');
+            const totalOffers = offers.length;
+
+            if (isNaN(limit) || limit < 1 || limit > totalOffers) {
+                alert(`Por favor, ingresa un número entre 1 y ${totalOffers}.`);
+                offers.forEach(offer => offer.style.display = 'block');
+                return;
+            }
+
+            for (let i = 0; i < totalOffers; i++) {
+                offers[i].style.display = i < limit ? 'block' : 'none';
+            }
+        }
+
+        document.body.classList.add('fade-in');
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const target = this.getAttribute('href');
+                if (!target.startsWith('#') && !target.startsWith('mailto') && !target.startsWith('tel')) {
+                    e.preventDefault();
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
